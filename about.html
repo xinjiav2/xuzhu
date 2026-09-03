@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhengji Li</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-secondary:#f5f5f7;
+    --text:#1d1d1f;
+    --text-secondary:#6e6e73;
+    --accent:#0071e3;
+    --hairline:rgba(0,0,0,0.08);
+    --radius:18px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#000000;
+      --bg-secondary:#1d1d1f;
+      --text:#f5f5f7;
+      --text-secondary:#a1a1a6;
+      --accent:#2997ff;
+      --hairline:rgba(255,255,255,0.12);
+    }
+  }
+
+  :root[data-theme="light"]{
+    --bg:#ffffff;
+    --bg-secondary:#f5f5f7;
+    --text:#1d1d1f;
+    --text-secondary:#6e6e73;
+    --accent:#0071e3;
+    --hairline:rgba(0,0,0,0.08);
+  }
+
+  :root[data-theme="dark"]{
+    --bg:#000000;
+    --bg-secondary:#1d1d1f;
+    --text:#f5f5f7;
+    --text-secondary:#a1a1a6;
+    --accent:#2997ff;
+    --hairline:rgba(255,255,255,0.12);
+  }
+
+  body{ transition:background-color .25s ease, color .25s ease; }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* Nav */
+  nav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    background:color-mix(in srgb, var(--bg) 72%, transparent);
+    border-bottom:1px solid var(--hairline);
+  }
+
+  nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:52px;
+    max-width:900px;
+  }
+
+  nav .brand{
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+
+  nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+  }
+
+  nav a{
+    font-size:13px;
+    color:var(--text-secondary);
+    transition:color .2s ease;
+  }
+
+  nav a:hover{ color:var(--text); }
+
+  .theme-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:1px solid var(--hairline);
+    background:var(--bg-secondary);
+    color:var(--text);
+    cursor:pointer;
+    font-size:14px;
+    line-height:1;
+    transition:transform .15s ease, background .2s ease;
+  }
+
+  .theme-toggle:hover{ transform:scale(1.06); }
+  .theme-toggle:active{ transform:scale(0.94); }
+
+  .theme-toggle svg{ width:15px; height:15px; }
+  .theme-toggle .icon-moon{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+
+  /* Hero */
+  header.hero{
+    padding:120px 0 96px;
+    text-align:center;
+  }
+
+  header.hero .eyebrow{
+    font-size:17px;
+    color:var(--text-secondary);
+    margin-bottom:8px;
+  }
+
+  header.hero h1{
+    font-size:56px;
+    font-weight:600;
+    letter-spacing:-0.03em;
+    line-height:1.05;
+  }
+
+  header.hero p.role{
+    margin-top:14px;
+    font-size:24px;
+    color:var(--text-secondary);
+    font-weight:400;
+    letter-spacing:-0.01em;
+  }
+
+  @media (max-width:600px){
+    header.hero{ padding:80px 0 64px; }
+    header.hero h1{ font-size:38px; }
+    header.hero p.role{ font-size:19px; }
+  }
+
+  /* Section shared */
+  section{
+    padding:72px 0;
+    border-top:1px solid var(--hairline);
+  }
+
+  section h2{
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
+  }
+
+  section p{
+    font-size:17px;
+    color:var(--text-secondary);
+    max-width:56ch;
+  }
+
+  section p + p{ margin-top:16px; }
+
+  /* Work */
+  .project{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:24px;
+    padding:24px 0;
+    border-top:1px solid var(--hairline);
+  }
+
+  .project:first-of-type{ border-top:none; padding-top:0; }
+
+  .project .year{
+    font-size:15px;
+    color:var(--text-secondary);
+    padding-top:2px;
+  }
+
+  .project h3{
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin-bottom:6px;
+  }
+
+  .project p{
+    font-size:15px;
+    color:var(--text-secondary);
+    max-width:52ch;
+  }
+
+  .project a.link{
+    display:inline-block;
+    margin-top:10px;
+    font-size:14px;
+    color:var(--accent);
+  }
+
+  @media (max-width:600px){
+    .project{ grid-template-columns:1fr; gap:6px; }
+  }
+
+  /* Contact */
+  .contact-links{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    margin-top:24px;
+  }
+
+  .contact-links a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 0;
+    border-top:1px solid var(--hairline);
+    font-size:17px;
+    transition:opacity .2s ease;
+  }
+
+  .contact-links a:first-child{ border-top:none; }
+
+  .contact-links a:hover{ opacity:0.6; }
+
+  .contact-links .arrow{
+    color:var(--text-secondary);
+    font-size:15px;
+  }
+
+  footer{
+    padding:40px 0 60px;
+    text-align:center;
+  }
+
+  footer p{
+    font-size:12px;
+    color:var(--text-secondary);
+  }
+
+  /* Focus visibility */
+  a:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Zhengji Li</div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Hi, I'm Zhengji.</p>
+    <h1>I design products that feel obvious in hindsight.</h1>
+    <p class="role">Student @OCS.</p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+
+    <div class="project">
+      <div class="year">2025</div>
+      <div>
+        <h3>OCS — Insights</h3>
+        <p>Backend -- Passwords</p>
+        <a class="link" href="#">Documentation</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="year">2023</div>
+      <div>
+        <h3>Routine — Calendar</h3>
+        <p>Calendar</p>
+        <a class="link" href="https://xinjiav2.github.io/routine/#projects">Read the case study</a>
+      </div>
+    </div>
+
+<!--
+    <div class="project">
+      <div class="year">2021</div>
+      <div>
+        <h3>Field Guide</h3>
+        <p>An independent app for identifying plants offline, designed and shipped solo over a year of evenings and weekends.</p>
+        <a class="link" href="#">View the app</a>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Aspiring Electrical Engineer, Currently @ DNHS</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Open to new projects and conversations. The fastest way to reach me is email.</p>
+    <div class="contact-links">
+      <a href="mailto:li.xuzhu10@gmail.com">
+        <span>Email</span>
+        <span class="arrow">li.xuzhu10@gmail.com</span>
+      </a>
+      <a href="https://x.com/nishiaax2">
+        <span>Twitter / X</span>
+        <span class="arrow">@nishiaaX2</span>
+      </a>
+      <a href="https://www.linkedin.com/in/zhengji-li-04291842b/">
+        <span>LinkedIn</span>
+        <span class="arrow">in/zhengji-li-04291842b/</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Designed and built by Zhengji Li.</p>
+  </div>
+</footer>
+
+
+<script>
+  (function(){
+    var root = document.documentElement;
+    var toggle = document.getElementById('themeToggle');
+    var STORAGE_KEY = 'theme-preference';
+
+    function getSystemTheme(){
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function getStored(){
+      try{ return localStorage.getItem(STORAGE_KEY); }
+      catch(e){ return null; }
+    }
+
+    function setStored(value){
+      try{ localStorage.setItem(STORAGE_KEY, value); }
+      catch(e){ /* storage unavailable, theme just won't persist */ }
+    }
+
+    function apply(theme){
+      root.setAttribute('data-theme', theme);
+      toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    var current = getStored() || getSystemTheme();
+    apply(current);
+
+    toggle.addEventListener('click', function(){
+      current = current === 'dark' ? 'light' : 'dark';
+      apply(current);
+      setStored(current);
+    });
+
+    // Follow system changes only if the user hasn't picked a theme manually
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+      if(!getStored()){
+        current = e.matches ? 'dark' : 'light';
+        apply(current);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
