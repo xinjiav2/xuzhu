@@ -1,0 +1,20 @@
+:root {
+  --font-heading: 'WDXL Lubrifont SC', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --text-color: #f5f5f5;
+  --bg-color: #0a0a0a;
+  --accent-color: #4dd0e1;
+}
+
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading) !important;
+  color: var(--accent-color);
+}
+
