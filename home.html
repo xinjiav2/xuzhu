@@ -1,0 +1,164 @@
+---
+layout: homepage
+title: Rachit Jaiswal
+---
+
+<section class="max-w-4xl mx-auto px-6">
+  <!-- Title centered -->
+  <h2 class="text-3xl text-cyan-400 mb-8 text-center">About Me</h2>
+
+  <!-- Flex container for image + text -->
+  <div class="flex items-center gap-12">
+    <!-- Profile Picture -->
+    <img src="/assets/img/profile3.JPG" alt="Rachit Jaiswal"
+         class="w-48 h-64 rounded-lg object-cover shadow-lg" />
+
+    <!-- Text Content -->
+    <div class="flex-1">
+      <p class="text-gray-300 text-lg leading-relaxed mb-6 text-left">
+        Hi, I'm Rachit. I'm a builder at the intersection of AI, robotics, and real-time systems. 
+        My work spans from developing intelligent algorithms that adapt to complex environments, 
+        to designing scalable infrastructures that ensure these systems operate reliably in the real world. 
+        I love taking ideas that start as small experiments and growing them into systems that can be shared, 
+        tested, and used at scale. Check out my GitHub and stay in touch!
+      </p>
+
+      <!-- Social Icons Centered -->
+      <div class="flex justify-center space-x-6 text-2xl text-gray-400">
+        <a href="mailto:rjaiswal.sd.77@gmail.com" target="_blank" aria-label="Email" class="hover:text-cyan-400 transition">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/rachit-j" target="_blank" aria-label="GitHub" class="hover:text-cyan-400 transition">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/rachit-jaiswal-a534b5196/" target="_blank" aria-label="LinkedIn" class="hover:text-cyan-400 transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .parallelogram {
+  background: white;
+  transform: skew(-20deg);
+  padding: 0.5rem 1.5rem;
+  min-width: 100px;
+  text-align: center;
+  display: inline-block;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.parallelogram:hover {
+  background: #e2e8f0;
+  transform: skew(-20deg) scale(1.05);
+}
+
+.parallelogram.active {
+  background: #bae6fd; /* light cyan */
+}
+
+.parallelogram-text {
+  display: inline-block;
+  transform: skew(20deg);
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+</style>
+
+<section class="max-w-4xl mx-auto px-6 text-center">
+  <h2 class="text-3xl text-cyan-400 mb-6">Skills</h2>
+  <div class="flex flex-wrap justify-center gap-4" id="skills-container">
+    <div class="parallelogram" data-skill="python"><span class="parallelogram-text">Python</span></div>
+    <div class="parallelogram" data-skill="java"><span class="parallelogram-text">Java</span></div>
+    <div class="parallelogram" data-skill="tf"><span class="parallelogram-text">TensorFlow</span></div>
+    <div class="parallelogram" data-skill="rts"><span class="parallelogram-text">Real-time Systems</span></div>
+    <div class="parallelogram" data-skill="js"><span class="parallelogram-text">JavaScript</span></div>
+    <div class="parallelogram" data-skill="react"><span class="parallelogram-text">React</span></div>
+    <div class="parallelogram" data-skill="python"><span class="parallelogram-text">Artificial Intelligence</span></div>
+    <div class="parallelogram" data-skill="python"><span class="parallelogram-text">Machine Learning</span></div>
+    <div class="parallelogram" data-skill="python"><span class="parallelogram-text">Neural Networks</span></div>
+    <div class="parallelogram" data-skill="sql"><span class="parallelogram-text">SQL</span></div>
+    <div class="parallelogram" data-skill="cpp"><span class="parallelogram-text">C++</span></div>
+    <div class="parallelogram" data-skill="java"><span class="parallelogram-text">Game Design</span></div>
+    <div class="parallelogram" data-skill="tf"><span class="parallelogram-text">Agile/SCRUM</span></div>
+    <div class="parallelogram" data-skill="ros"><span class="parallelogram-text">Collaboration</span></div>
+    <div class="parallelogram" data-skill="rts"><span class="parallelogram-text">Communication</span></div>
+  </div>
+
+
+  <!-- Description box -->
+  <!-- <div id="skill-description" class="mt-6 max-w-xl mx-auto text-left text-gray-300 text-base hidden transition-opacity duration-300 opacity-0">
+    <div class="flex justify-between items-center mb-2">
+      <h3 id="skill-title" class="text-xl font-bold text-white"></h3>
+      <button onclick="hideSkill()" class="text-gray-400 hover:text-red-400 text-xl font-bold">&times;</button>
+    </div>
+    <p id="skill-body" class="leading-relaxed"></p>
+  </div> -->
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
+let skillData = {};
+
+function loadSkillsFromCSV() {
+  Papa.parse("{{ '/assets/data/skills/main.csv' | relative_url }}", {
+    download: true,
+    header: true,
+    complete: function(results) {
+      results.data.forEach(row => {
+        skillData[row.id] = {
+          title: row.title,
+          body: row.body
+        };
+      });
+
+      // Enable skill clicks once loaded
+      document.querySelectorAll('.parallelogram').forEach(el => {
+        el.addEventListener('click', () => showSkill(el.dataset.skill));
+      });
+    }
+  });
+}
+
+loadSkillsFromCSV();
+
+
+function showSkill(key) {
+  const box = document.getElementById("skill-description");
+  const title = document.getElementById("skill-title");
+  const body = document.getElementById("skill-body");
+
+  // Update content
+  title.textContent = skillData[key].title;
+  body.textContent = skillData[key].body;
+
+  // Make it visible
+  box.classList.remove("hidden");
+  requestAnimationFrame(() => box.classList.add("opacity-100"));
+
+  // Highlight the selected badge
+  document.querySelectorAll('.parallelogram').forEach(el => el.classList.remove('active'));
+  document.querySelector(`.parallelogram[data-skill="${key}"]`).classList.add('active');
+}
+
+function hideSkill() {
+  const box = document.getElementById("skill-description");
+  box.classList.remove("opacity-100");
+  setTimeout(() => box.classList.add("hidden"), 300);
+  document.querySelectorAll('.parallelogram').forEach(el => el.classList.remove('active'));
+}
+
+// Attach event listeners
+document.querySelectorAll('.parallelogram').forEach(el => {
+  el.addEventListener('click', () => showSkill(el.dataset.skill));
+});
+</script>
+
+
+

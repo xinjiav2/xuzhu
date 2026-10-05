@@ -1,0 +1,419 @@
+---
+layout: about
+title: About
+---
+<section class="resume-slide animate-in">
+  <div class="h-full flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-5xl font-bold text-cyan-400 mb-2">Rachit Jaiswal</h1>
+    <p class="text-lg text-gray-300">AI • Robotics • Systems Engineering</p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col md:flex-row gap-6 px-6 w-full items-center">
+
+    <!-- Left Column: Title + Date (fixed width) -->
+    <div class="md:w-1/4 flex flex-col justify-center text-center md:text-left">
+      <h3 class="text-xl font-bold text-cyan-300">KasmV2 — SCRUM Master / Systems Engineer Intern</h3>
+      <p class="text-sm text-gray-400">May 2024 – Present</p>
+    </div>
+
+    <!-- Middle Column: Description + Toggle (flexible) -->
+    <div class="md:flex-1 text-gray-300 space-y-2">
+      <p>
+        Led a four-member team to deploy a cloud-based multi-server system across five high schools, providing scalable computing environments for students and teachers using Kasm on AWS.
+      </p>
+      {% raw %}
+      <div x-data="{ open: false }">
+        <button @click="open = !open" class="text-sm text-gray-400 hover:text-white focus:outline-none">
+          <span x-show="!open">Show more</span>
+          <span x-show="open">Show less</span>
+        </button>
+        <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+          <p>
+            As SCRUM Master, I managed a cross-functional team to design, build, and deploy a cloud infrastructure solution tailored to education. The project focused on eliminating device inequality by delivering web-based VMs to students with limited hardware. I architected the AWS infrastructure, configured Docker environments, and implemented secure authentication systems, ensuring district-wide integration and minimal overhead for teachers.
+          </p>
+        </div>
+      </div>
+      {% endraw %}
+      <p class="text-sm text-gray-400">
+        <strong>Tools:</strong> AWS, Docker, Flask<br>
+        <strong>Skills:</strong> Cloud Architecture, Team Leadership, Systems Engineering
+      </p>
+    </div>
+
+    <!-- Right Column: Logo (fixed width) -->
+    <div class="md:w-32 flex justify-center items-center">
+      <!-- Option B: Square Box -->
+      <div class="w-24 h-24 rounded-xl overflow-hidden">
+        <img src="/assets/resume/img/kasmv2_logo.png"
+             alt="KasmV2"
+             class="object-contain w-full h-full" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/trinamix-logo.png" alt="Trinamix" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">TrinamiX — ML Intern</h3>
+    <p class="text-sm text-gray-400">Aug 2023 – Nov 2023</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Developed ML systems using laser speckle patterns and fractal dimension calculations to classify material surfaces with high accuracy.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          My work focused on training machine learning models to analyze microscopic patterns generated from laser reflections on various materials. Using fractal dimension algorithms and box-size tuning, I optimized the classification accuracy for different textures—unlocking implications in robotics and material identification. This research contributed to novel methods of non-invasive material inspection and was presented as a step forward in AI-powered surface recognition.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> Python, SciKit-Learn<br>
+      <strong>Skills:</strong> Machine Learning, Surface Analysis, Research
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/colortokens-logo.png" alt="ColorTokens" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">ColorTokens — Security Intern</h3>
+    <p class="text-sm text-gray-400">Jun 2022 – Aug 2022</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Secured Linux systems, hardened Apache2 and Nginx environments, and developed documentation to mitigate cybersecurity vulnerabilities in critical infrastructure.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          During my internship, I worked closely with the Linux security team to diagnose vulnerabilities in kernel services and web servers. I wrote scripts to audit system logs, applied hardening configurations to prevent injection attacks, and improved service uptime through patching routines. This experience gave me insight into how enterprise networks are defended in real-time, especially in zero-trust architectures.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> Linux, Apache, Nginx<br>
+      <strong>Skills:</strong> Cybersecurity, Documentation, Network Security
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/qualcomm-logo.png" alt="Qualcomm" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Tech Space x Qualcomm — Founder & AI Research Lead</h3>
+    <p class="text-sm text-gray-400">May 2023</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Led a high school team to develop AI recycling solutions using the Qualcomm Innovators Development Kit (QIDK), building one of the first high school–level QIDK applications featured on Qualcomm’s blog.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I spearheaded a project in collaboration with Qualcomm to prototype an AI-based camera vision system that could sort plastics. As the first high schooler to use the QIDK board, I interfaced with hardware and trained vision models to detect and classify plastic types in real time. Our work was highlighted in a Qualcomm blog and later used to inspire other student-led AI solutions.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> QIDK, Python, OpenCV<br>
+      <strong>Skills:</strong> AI Prototyping, Product Innovation, Mentorship
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/ucmerced-logo.png" alt="UC Merced" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">UC Merced — AI Safety Researcher</h3>
+    <p class="text-sm text-gray-400">2023</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Conducted formal verification and control-theory-based testing of LLMs for safety-critical system interactions.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I conducted a comparative analysis of large language models (LLMs) like LLaMA and Falcon in handling mission-critical prompts. Using SPIN for formal verification, I created benchmarks and test cases that evaluated model response safety in high-risk domains like healthcare and aerospace. My work contributed to early-stage safety protocols for generative AI systems.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> SPIN, Python<br>
+      <strong>Skills:</strong> Formal Verification, LLM Evaluation, AI Safety
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/gsdsef-logo.png" alt="GSDSEF" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Greater San Diego Science and Engineering Fair — 3rd Place</h3>
+    <p class="text-sm text-gray-400">Mar 2023</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Developed a plastic sorting system using machine learning and OpenCV, achieving a 60% improvement in accuracy.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I created an innovative plastic classification system that used a camera and a two-stage linear slide arm to sort bottles into 20 categories. The project leveraged FTC robotics parts, OpenCV for vision, and machine learning to increase sorting precision by 60% over random chance. This research demonstrated how AI and robotics can be deployed for affordable, real-world environmental impact.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> OpenCV, Python, FTC SDK<br>
+      <strong>Skills:</strong> Computer Vision, Hardware Control, Applied ML
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/ccir-logo.png" alt="Cambridge Centre for International Research" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Cambridge Centre for International Research — Researcher</h3>
+    <p class="text-sm text-gray-400">Jun 2023 – Oct 2023</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Developed a Hindi-English code-switched translation system using advanced machine learning techniques for improved multilingual communication.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I researched and implemented a Natural Language Processing system capable of handling code-switching between Hindi and English. This involved deep understanding of grammar in both languages, neural network modeling for translation, and dataset curation. The final system significantly improved fluency and contextual accuracy for real-world mixed-language texts, and was documented in a research paper.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> Python, NLP Libraries<br>
+      <strong>Skills:</strong> NLP, Code-switching, Language Modeling
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/horizon-logo.png" alt="Horizon Academic" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Horizon Academic — AI & CV Researcher</h3>
+    <p class="text-sm text-gray-400">Jun 2023 – Sep 2023</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Created an image recognition system for plastic bottle classification, contributing to waste management efforts through accurate plastic sorting.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I developed a camera vision system that could distinguish plastic bottle types for recycling purposes. By training CNNs on a labeled dataset and applying object detection principles, I enhanced sorting performance. This research tackled environmental challenges using AI and was a continuation of my long-term interest in robotics-driven sustainability.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> TensorFlow, OpenCV<br>
+      <strong>Skills:</strong> Image Classification, Dataset Design, Environmental Tech
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/ftc-logo.png" alt="FTC Robotics" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">FTC Robotics — Captain & Programming Lead</h3>
+    <p class="text-sm text-gray-400">Jun 2019 – Apr 2024</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Led team 15171 to a #2 state ranking, built AI-powered autonomous routines, and created a computer vision–based plastic sorter that earned 3rd place at GSDSEF.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          As captain of FTC Team 15171, I managed both the engineering direction and programming architecture of our robots. Our designs often integrated object detection, autonomous navigation, and custom linear slide systems. One of our highlight projects—a plastic sorter using AI—earned top honors at GSDSEF, showing how robotics can create scalable environmental impact.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> OpenCV, Android Studio, FTC SDK<br>
+      <strong>Skills:</strong> Robotics, AI Integration, Leadership
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/cyberpatriot-logo.png" alt="CyberPatriot" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">CyberPatriot — National Champion</h3>
+    <p class="text-sm text-gray-400">Jun 2019 – Present</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      National finalist and champion in cybersecurity competitions. Specialized in Linux/Windows security and led teams through threat detection and system hardening challenges.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          As a CyberPatriot competitor for six years, I specialized in threat analysis and system patching. My teams reached the national finals twice and won the national title once—an honor achieved by only 12 out of 1,000+ teams each year. I led vulnerability remediation across Ubuntu, Windows Server, and Cisco systems.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Tools:</strong> Linux, Windows, Cisco Packet Tracer<br>
+      <strong>Skills:</strong> Cybersecurity, Forensics, Team Strategy
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/techspace-logo.png" alt="Tech Space" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Tech Space — Founder & President</h3>
+    <p class="text-sm text-gray-400">Dec 2022 – Present</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Created a student-led organization to introduce peers to emerging technologies through workshops, demos, and collaborations with engineers.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I launched Tech Space to bridge the innovation gap in high school tech education. We hosted AI workshops, taught practical programming skills, and brought Qualcomm and other industry speakers directly to students. As the first high school to work with the QIDK board, our projects expanded student exposure to machine learning, computer vision, and entrepreneurship.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Focus:</strong> Education, Innovation, Student Empowerment
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/rocket-logo.png" alt="Aerospace and Rocketry" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Aerospace & Rocketry Club — President</h3>
+    <p class="text-sm text-gray-400">Jun 2023 – Present</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Managed flight-based projects using drones and model rockets, with a focus on aerodynamics, telemetry, and STEM outreach.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          I led the Aerospace & Rocketry Club in launching rockets and flying autonomous drones with sensors. Beyond technical builds, we hosted outreach sessions to help other students explore propulsion systems and telemetry tracking. The club fostered real-world application of physics, teamwork, and scientific curiosity.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Focus:</strong> Flight Mechanics, Team Collaboration, Engineering Design
+    </p>
+  </div>
+</section>
+
+<section class="resume-slide animate-in">
+  <div class="flex flex-col items-center md:items-start md:w-1/3 text-center md:text-left px-6">
+    <img src="/assets/resume/img/dnhs-logo.png" alt="DNHS" class="w-16 h-16 object-contain rounded-lg mb-2">
+    <h3 class="text-xl font-bold text-cyan-300">Del Norte High School — Student</h3>
+    <p class="text-sm text-gray-400">Aug 2021 – Jun 2025</p>
+  </div>
+  <div class="md:w-2/3 text-gray-300 space-y-2 px-6">
+    <p>
+      Graduated with a weighted GPA of 4.47 and unweighted GPA of 3.96. Balanced rigorous academics with competitive robotics, cybersecurity, and leadership in student organizations.
+    </p>
+    {% raw %}
+    <div x-data="{ open: false }">
+      <button @click="open = !open" class="text-sm text-cyan-400 hover:underline focus:outline-none">
+        <span x-show="!open">Show more</span>
+        <span x-show="open">Show less</span>
+      </button>
+      <div x-show="open" x-transition class="mt-2 text-sm text-gray-400">
+        <p>
+          My time at DNHS was shaped by a pursuit of both academic rigor and applied innovation. I challenged myself with AP and honors courses while also starting clubs that inspired hands-on learning. Whether it was launching rockets, teaching AI, or leading cybersecurity teams, my high school journey reflects a blend of intellectual drive and collaborative spirit.
+        </p>
+      </div>
+    </div>
+    {% endraw %}
+    <p class="text-sm text-gray-400">
+      <strong>Achievements:</strong> Academic Excellence, Multidisciplinary Involvement
+    </p>
+  </div>
+</section>
