@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#090a0b">
+    <title>Blogs — Personal Space</title>
+    <meta name="description" content="A personal corner of the internet. Projects, writing, and notes along the way.">
+    <meta property="og:title" content="Blogs — Personal Space">
+    <meta property="og:description" content="A personal corner of the internet. Projects, writing, and notes along the way.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="header">
+      <a class="brand" href="/" aria-label="Personal Space home">
+        <span class="brand-icon" aria-hidden="true">✳</span> personal<span class="brand-muted">space</span><span class="brand-dot">.</span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">
+        Menu <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/blogs/" aria-current="page">Blogs</a>
+        <a href="/notebook/">Notebook</a>
+      </nav>
+      <a class="header-note" href="/notebook/">
+        A work in progress <span class="status-dot"></span>
+      </a>
+    </header>
+    <main id="main">
+      <div class="wrap page">
+    <div class="page-intro">
+      <span class="eyebrow">A PLACE TO THINK OUT LOUD</span>
+      <h1>Words, ideas,<br>and <span>in-betweens.</span></h1>
+      <p>Notes on building things, paying attention, and figuring it out.</p>
+    </div>
+    <div class="filter-bar">
+      <div class="filters" role="group" aria-label="Filter blog posts">
+        <button class="filter active" data-filter="all" aria-pressed="true">All posts <span>03</span></button>
+        <button class="filter" data-filter="building" aria-pressed="false">Building</button>
+        <button class="filter" data-filter="thoughts" aria-pressed="false">Thoughts</button>
+        <button class="filter" data-filter="process" aria-pressed="false">Process</button>
+      </div>
+      <label class="search">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" id="post-search" placeholder="Find a post…" aria-label="Search blog posts">
+      </label>
+    </div>
+    <div id="posts"><a class="post-row" href="/blogs/making-room/" data-category="thoughts" data-search="making room for the things that matter on doing less, paying attention, and leaving a little space for the unexpected.">
+    <time>Oct 20, 2026</time>
+    <div>
+      <h3>Making room for the things that matter</h3>
+      <p>On doing less, paying attention, and leaving a little space for the unexpected.</p>
+      <span class="mobile-meta">Thoughts · 3 min read</span>
+    </div>
+    <span class="post-category">Thoughts</span>
+    <span class="row-arrow" aria-hidden="true">↗</span>
+  </a><a class="post-row" href="/blogs/small-tools/" data-category="building" data-search="a case for small, personal tools the best software sometimes solves a very small problem for a single person.">
+    <time>Oct 12, 2026</time>
+    <div>
+      <h3>A case for small, personal tools</h3>
+      <p>The best software sometimes solves a very small problem for a single person.</p>
+      <span class="mobile-meta">Building · 4 min read</span>
+    </div>
+    <span class="post-category">Building</span>
+    <span class="row-arrow" aria-hidden="true">↗</span>
+  </a><a class="post-row" href="/blogs/archlinux-arm/" data-category="process" data-search="arch linux arm on a consumer laptop setting up arch linux arm on a consumer laptop for personal use.">
+    <time>Oct 20, 2026</time>
+    <div>
+      <h3>Arch Linux ARM on a consumer laptop</h3>
+      <p>Setting up Arch Linux ARM on a consumer laptop for personal use.</p>
+      <span class="mobile-meta">Process · 5 min read</span>
+    </div>
+    <span class="post-category">Process</span>
+    <span class="row-arrow" aria-hidden="true">↗</span>
+  </a></div>
+    <p id="empty-posts" hidden>No posts found. Try a different search or category.</p>
+    <p class="collection-end" id="post-count" aria-live="polite">3 posts · A few thoughts, with more to come.</p>
+  </div>
+    </main>
+    <footer class="footer wrap">
+      <div>
+        <a class="footer-brand" href="/">personalspace.</a>
+        <p>A small corner of a very big internet.</p>
+      </div>
+      <div class="footer-right">
+        <a href="/about/">About this space <span aria-hidden="true">↗</span></a>
+        <span>© 2026 · Made with intention</span>
+        <span class="sample-label">Portfolio template · Sample content</span>
+      </div>
+    </footer>
+  </body>
+</html>

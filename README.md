@@ -24,7 +24,19 @@ Open http://127.0.0.1:4173. Run the build again after editing source files, then
 - Replace `favicon.svg` to change the site icon.
 - `app.js` contains the mobile menu, post filtering/search, focus timer, local scratchpad, and wireframe renderer. Essential pages and reading work without JavaScript.
 
-## Deploy
+## GitHub Pages
+
+The repository includes a real root `index.html` and the other static pages, so GitHub Pages displays the website instead of the README without requiring a build workflow.
+
+In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/ (root)**, and save. The site is live at https://zhengji.tech/ (or https://xinjiav2.github.io/xuzhu/).
+
+After editing source files, run `npm run build:pages` and commit the updated HTML along with your source changes. This refreshes both `dist/` and the root website from the build.
+
+Alternatively, choose **GitHub Actions** as the Pages source to use the included workflow (`.github/workflows/pages.yml`). It builds and validates a fresh site automatically on each push to `main`.
+
+For other hosts, `npm run build` produces `dist/`. `BASE_PATH` configures its URL prefix and `OUTPUT_DIR` configures its output directory.
+
+## Other static hosts
 
 The output directory is `dist/`. Upload it to static hosting. Configure the host to use `404.html` for missing pages, preserving an HTTP 404 status. Directory routes are real files (`about/index.html`, `blogs/making-room/index.html`, etc.). No SPA fallback is required.
 

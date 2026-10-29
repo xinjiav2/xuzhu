@@ -1,6 +1,8 @@
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
-const root = resolve("dist");
+import { fileURLToPath } from "node:url";
+import { basePath, outputDirectory } from "./config.mjs";
+const root = fileURLToPath(outputDirectory);
 let pages = 0,
   links = 0,
   errors = [];
@@ -16,7 +18,13 @@ function walk(dir) {
     const html = readFileSync(file, "utf8");
     for (const m of html.matchAll(/(?:href|src)="(\/[^"#]*)(?:#[^"]*)?"/g)) {
       links++;
-      let target = join(root, m[1]);
+      if (m[1].startsWith("//")) continue;
+      if (basePath && !m[1].startsWith(basePath + "/")) {
+        errors.push(`${file}: link outside BASE_PATH: ${m[1]}`);
+        continue;
+      }
+      let target = resolve(root, "." + m[1].slice(basePath.length));
+      if (existsSync(target) && statSync(target).isDirectory()) target = join(target, "index.html");
       if (!existsSync(target)) errors.push(`${file}: missing ${m[1]}`);
     }
     for (const tag of ["<title>", 'name="description"', 'name="viewport"', "<h1>", 'id="main"'])

@@ -1,1 +1,12 @@
-{"name":"personal-space","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node build.mjs","check":"node check.mjs","dev":"node serve.mjs"}}
+{
+  "name": "personal-space",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node check.mjs",
+    "dev": "node serve.mjs",
+    "build:pages": "node build.mjs && node prepare-pages.mjs"
+  }
+}

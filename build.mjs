@@ -1,6 +1,8 @@
 import { mkdirSync, writeFileSync, copyFileSync } from "node:fs";
 
-const dist = new URL("./dist/", import.meta.url);
+import { basePath, outputDirectory } from "./config.mjs";
+
+const dist = outputDirectory;
 mkdirSync(dist, { recursive: true });
 
 const projects = [
@@ -98,13 +100,13 @@ const posts = [
     ],
   },
   {
-    slug: "learning-in-public",
-    title: "Learning in public, a little at a time",
+    slug: "archlinux-arm",
+    title: "Arch Linux ARM on a consumer laptop",
     category: "Process",
-    date: "September 28, 2026",
-    short: "Sep 28, 2026",
-    time: "3 min",
-    description: "A notebook does not need to be a finished thought to be worth sharing.",
+    date: "October 20, 2026",
+    short: "Oct 20, 2026",
+    time: "5 min",
+    description: "Setting up Arch Linux ARM on a consumer laptop for personal use.",
     paragraphs: [
       [
         "A record of the middle",
@@ -209,7 +211,8 @@ function write(path, title, content, description) {
   mkdirSync(new URL("./", target), { recursive: true });
   writeFileSync(
     target,
-    shell(title, path === "404" ? "/404/" : "/" + (path ? path + "/" : ""), content, description),
+    shell(title, path === "404" ? "/404/" : "/" + (path ? path + "/" : ""), content, description)
+      .replace(/((?:href|src)=")\/(?!\/)/g, `$1${basePath}/`),
   );
 }
 
@@ -597,4 +600,5 @@ for (const f of ["style.css", "app.js", "favicon.svg"]) {
   copyFileSync(new URL("./" + f, import.meta.url), new URL(f, dist));
 }
 writeFileSync(new URL("robots.txt", dist), "User-agent: *\nAllow: /\n");
-console.log("Built 12 static pages, including a custom 404.");
+writeFileSync(new URL(".nojekyll", dist), "");
+console.log(`Built ${6 + projects.length + posts.length} static pages, including a custom 404.`);
