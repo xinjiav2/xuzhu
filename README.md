@@ -1,4 +1,4 @@
-# Personal Space
+# Personal Portfolio
 
 A small static portfolio, blog, and notebook. Responsive dark design, an original parametric wireframe canvas, and no runtime framework dependencies.
 
@@ -16,7 +16,7 @@ Open http://127.0.0.1:4173. Run the build again after editing source files, then
 
 ## Make it yours
 
-- Edit `build.mjs` to change the introduction, about copy, project metadata, notebook entries, and blog posts. All personal content is explicitly illustrative; replace it before using as your public portfolio.
+- Replace `Your Name` in `build.mjs` with your name, then edit the introduction, about copy, project metadata, notebook entries, and blog posts. All personal content is explicitly illustrative; replace it before using as your public portfolio.
 - Add posts to the `posts` array. Each post automatically gets a real static HTML page, blog listing entry, and reading link.
 - Add projects to the `projects` array and replace the included concept demos with your project details and destinations.
 - Change the year and footer text in the `shell` function in `build.mjs`.

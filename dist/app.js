@@ -52,14 +52,25 @@ search?.addEventListener("input", filterPosts);
 const pad = document.getElementById("scratchpad"),
   save = document.getElementById("save-state");
 if (pad) {
+  const storageKey = "portfolio-notebook-note";
   try {
-    pad.value = localStorage.getItem("personal-space-note") || "";
+    const savedNote = localStorage.getItem(storageKey);
+    if (savedNote !== null) {
+      pad.value = savedNote;
+    } else {
+      const legacyNote = localStorage.getItem("personal-space-note");
+      if (legacyNote !== null) {
+        pad.value = legacyNote;
+        localStorage.setItem(storageKey, legacyNote);
+        localStorage.removeItem("personal-space-note");
+      }
+    }
   } catch {
     save.textContent = "Storage unavailable. Notes last for this visit.";
   }
   pad.addEventListener("input", () => {
     try {
-      localStorage.setItem("personal-space-note", pad.value);
+      localStorage.setItem(storageKey, pad.value);
       save.textContent = "Saved on this device.";
     } catch {
       save.textContent = "Storage unavailable. Copy your note before leaving.";
@@ -82,7 +93,7 @@ if (pad) {
     clearArmed = false;
     pad.value = "";
     try {
-      localStorage.removeItem("personal-space-note");
+      localStorage.removeItem(storageKey);
     } catch {}
     save.textContent = "Note cleared.";
     e.currentTarget.textContent = "Clear note";
@@ -101,7 +112,7 @@ if (start) {
     const min = String(Math.floor(remain / 60)).padStart(2, "0"),
       sec = String(remain % 60).padStart(2, "0");
     display.textContent = `${min}:${sec}`;
-    document.title = running ? `${min}:${sec} — Orbit` : "Orbit — Personal Space";
+    document.title = running ? `${min}:${sec} — Orbit` : "Orbit — Portfolio";
   }
   function tick() {
     remain = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));

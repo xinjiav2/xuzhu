@@ -137,7 +137,7 @@ function shell(
   title,
   path,
   content,
-  description = "A personal corner of the internet. Projects, writing, and notes along the way.",
+  description = "A personal portfolio of selected projects, writing, and experiments.",
 ) {
   const nav = [
     ["Home", "/"],
@@ -149,8 +149,7 @@ function shell(
     .map(([name, href]) => `<a href="${href}"${currentAttr(path, href)}>${name}</a>`)
     .join("\n        ");
 
-  const pageTitle =
-    title === "Home" ? "Personal Space — A place for curiosity" : `${title} — Personal Space`;
+  const pageTitle = title === "Home" ? "Your Name — Portfolio" : `${title} — Your Name`;
   const ogType = path.startsWith("/blogs/") && path != "/blogs/" ? "article" : "website";
 
   return `<!doctype html>
@@ -161,7 +160,7 @@ function shell(
     <meta name="theme-color" content="#090a0b">
     <title>${pageTitle}</title>
     <meta name="description" content="${description}">
-    <meta property="og:title" content="${title} — Personal Space">
+    <meta property="og:title" content="${pageTitle}">
     <meta property="og:description" content="${description}">
     <meta property="og:type" content="${ogType}">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -171,8 +170,8 @@ function shell(
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="header">
-      <a class="brand" href="/" aria-label="Personal Space home">
-        <span class="brand-icon" aria-hidden="true">✳</span> personal<span class="brand-muted">space</span><span class="brand-dot">.</span>
+      <a class="brand" href="/" aria-label="Your Name portfolio home">
+        <span class="brand-icon" aria-hidden="true">✳</span> Your Name
       </a>
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">
         Menu <span aria-hidden="true">☰</span>
@@ -189,11 +188,11 @@ function shell(
     </main>
     <footer class="footer wrap">
       <div>
-        <a class="footer-brand" href="/">personalspace.</a>
-        <p>A small corner of a very big internet.</p>
+        <a class="footer-brand" href="/">Your Name</a>
+        <p>Selected work, writing, and experiments.</p>
       </div>
       <div class="footer-right">
-        <a href="/about/">About this space ${arrow}</a>
+        <a href="/about/">About me ${arrow}</a>
         <span>© 2026 · Made with intention</span>
         <span class="sample-label">Portfolio template · Sample content</span>
       </div>
@@ -321,12 +320,12 @@ write(
   "Home",
   `<section class="hero wrap">
     <div class="hero-copy">
-      <div class="eyebrow hero-kicker"><span class="status-dot"></span> A PERSONAL CORNER OF THE INTERNET</div>
-      <h1>Curiosity, code,<br>and a few <span>ideas.</span></h1>
-      <p>A place for things I’m building, thoughts I’m exploring,<br class="desktop-break"> and notes collected along the way.</p>
+      <div class="eyebrow hero-kicker"><span class="status-dot"></span> PERSONAL PORTFOLIO</div>
+      <h1>Selected work,<br>thoughtful <span>experiments.</span></h1>
+      <p>A collection of projects, writing, and ideas<br class="desktop-break"> from my ongoing practice.</p>
       <div class="hero-actions">
-        <a class="button button-light" href="/projects/">Explore my work <span aria-hidden="true">↗</span></a>
-        <a class="text-link" href="/about/">A little about me <span aria-hidden="true">→</span></a>
+        <a class="button button-light" href="/projects/">View selected work <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="/about/">About me <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="hero-art">
@@ -368,8 +367,8 @@ write(
   `<div class="wrap page">
     <div class="page-intro">
       <span class="eyebrow">THE PERSON BEHIND THE PIXELS</span>
-      <h1>A little about<br>this <span>space.</span></h1>
-      <p>A home for the work, the writing,<br>and the thinking in between.</p>
+      <h1>A little about<br>the <span>person.</span></h1>
+      <p>The person, practice, and<br>thinking behind the work.</p>
     </div>
     <div class="about-layout">
       <div class="about-art">
@@ -378,12 +377,12 @@ write(
       </div>
       <div class="prose about-copy">
         <h2>Nice to have you here.</h2>
-        <p>This is a personal space for curiosity: a place to share projects, think out loud, and keep a record of the things that catch my attention.</p>
-        <p>I like the idea of an internet with more small, personal corners. Places with a point of view, room for experiments, and something useful to stumble upon.</p>
+        <p>This portfolio brings together projects, writing, and experiments that reflect what I’m curious about and how I work.</p>
+        <p>I enjoy making thoughtful digital work, exploring new ideas, and sharing what I learn along the way.</p>
         <h2>A few things you’ll find here</h2>
         <p><a href="/projects/">Projects</a> is a collection of small tools and experiments. <a href="/blogs/">The blog</a> makes room for longer thoughts. <a href="/notebook/">The notebook</a> is for everything that hasn’t quite found its shape yet.</p>
         <h2>Built to stay simple.</h2>
-        <p>Clear type. A little breathing room. Pages that load quickly and read comfortably. The website should get out of the way of what you came to see.</p>
+        <p>Clear type, considered details, and pages that load quickly and read comfortably. The site should get out of the way of the work.</p>
         <aside class="content-note">Make it yours: this is sample introductory copy. Replace it with your name, story, interests, and contact links in <code>build.mjs</code>.</aside>
       </div>
     </div>
@@ -488,7 +487,7 @@ const notes = [
     "003",
     "A reading list for a slower internet",
     "On the shelf",
-    "A few starting points for thinking about attention, tools, and personal spaces online.",
+    "A few starting points for thinking about attention, tools, and independent portfolios online.",
   ],
   [
     "004",
